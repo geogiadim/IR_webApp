@@ -35,8 +35,12 @@
 </section>
 <script>
 $('#submit').click(function(){
-    params = `?query=${$('#search-input').val()}`
-    $('#search-form').attr('action', '{% url 'results' %}'+params);
+    if ($('#search-input').val() === ''){
+        $('#search-form').attr('action', '{% url 'index' %}');
+    }else{
+        params = `?query=${$('#search-input').val()}`
+        $('#search-form').attr('action', '{% url 'results' %}'+params);
+    }
 });
 </script>
 {% endblock %}
