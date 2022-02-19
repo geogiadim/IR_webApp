@@ -1,0 +1,1 @@
+# Django web app for Information Retrieval project
