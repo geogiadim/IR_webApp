@@ -66,7 +66,7 @@ def make_query(stop_words, tfidf_vectorizer, tfidf_matrix, query, inverted_index
         for query_word in unique_words:
             # Calculating document vectors
             if query_word in inverted_index:
-                for doc in inverted_index[query_word][1:]:  # first element is the idf
+                for doc in inverted_index[query_word][:]:  # first element is the idf
                     relevant_docs.add(doc)
         for doc in relevant_docs:
             cos_sim_list.append([doc, cosine_similarity(ready_query, tfidf_matrix[doc])])

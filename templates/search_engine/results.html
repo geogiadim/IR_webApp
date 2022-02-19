@@ -27,7 +27,7 @@
                     <a class="nav-link" href="{% url 'speech' %}?doc={{ doc }}">{{ link }}</a>
                 {% endfor %}
             {% else %}
-                <p>Η αναζήτηση - {{ query }} - δεν βρήκε κάποιο έγγραφο.</p>
+                <p>Η αναζήτηση - <b>{{ query }}</b> - δεν βρήκε κάποιο έγγραφο.</p>
             {% endif %}
         {% endif %}
         </div>
